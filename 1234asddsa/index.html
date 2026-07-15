@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  a{color:#0d0d0d;text-decoration:none}
+  a:hover{color:#E4122B}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#ffffff}
+  @keyframes md-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  image-slot{display:block;width:100%;height:100%}
+
+@media (max-width:768px){
+  .m-nav{padding:12px 20px!important}
+  .m-nav img{height:44px!important;width:auto!important}
+  .m-navlinks{gap:14px!important}
+  .m-navlink{display:none!important}
+  .m-hero{grid-template-columns:1fr!important;padding:44px 24px 40px!important;gap:36px!important}
+  .m-h1{font-size:46px!important}
+  .m-herobtns{flex-wrap:wrap!important}
+  .m-trust{flex-direction:column!important;align-items:flex-start!important;gap:14px!important;padding:18px 0 18px 24px!important}
+  .m-prodrow{grid-template-columns:36px 1fr auto!important;gap:14px!important;padding:20px 0!important}
+  .m-prodrow>span:nth-child(2){font-size:18px!important}
+  .m-prodrow>span:nth-child(3){display:none!important}
+  #products,#partners{padding:48px 24px!important}
+  #coverage{padding:48px 24px!important;grid-template-columns:1fr!important}
+  .m-partners{grid-template-columns:1fr!important}
+  .m-feat{grid-template-columns:1fr!important}
+  .m-featpad{padding:48px 24px!important}
+  .m-featimg{min-height:280px!important}
+  .m-why{padding:48px 24px!important}
+  .m-whygrid{grid-template-columns:1fr!important;gap:24px!important}
+  #about{margin:0 20px 40px!important;padding:40px 26px!important;flex-direction:column!important;align-items:flex-start!important}
+  .m-footer{flex-direction:column!important;gap:10px!important;text-align:center!important;padding:20px 24px!important}
+  h2{font-size:30px!important}
+  .m-secthead{flex-wrap:wrap!important;gap:18px!important}
+}
+</style>
+</helmet>
+
+<div data-screen-label="MD Landing" style="background:#ffffff;color:#0d0d0d;font-family:'Archivo',sans-serif;max-width:1280px;margin:0 auto">
+
+  <!-- nav -->
+  <div class="m-nav" style="display:flex;align-items:center;justify-content:space-between;padding:22px 56px;border-bottom:1px solid #ececec;position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);z-index:10">
+    <img src="assets/md-logo-trans.png" alt="M.D. for Medical Supplies" style="height: 72px; width: 262px; display: block">
+    <div class="m-navlinks" style="display:flex;align-items:center;gap:34px;font:600 12px 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#3a3a3a">
+      <a class="m-navlink" href="#products" style="color:#3a3a3a">PRODUCTS</a><a class="m-navlink" href="#partners" style="color:#3a3a3a">PARTNERS</a><a class="m-navlink" href="#coverage" style="color:#3a3a3a">COVERAGE</a><a class="m-navlink" href="#about" style="color:#3a3a3a">ABOUT</a>
+      <span onClick="{{ openQuote }}" style="display:inline-flex;align-items:center;height:38px;padding:0 20px;border:1.5px solid #0d0d0d;border-radius:999px;color:#0d0d0d;cursor:pointer">REQUEST A QUOTE</span>
+    </div>
+  </div>
+
+  <!-- hero -->
+  <div class="m-hero" style="padding:96px 56px 60px;display:grid;grid-template-columns:1.55fr 1fr;gap:56px;align-items:end">
+    <div>
+      <div style="font:600 12px 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#E4122B;margin-bottom:28px">MEDICAL SUPPLIES · INTERVENTIONAL CARDIOLOGY · EGYPT</div>
+      <h1 class="m-h1" style="margin:0;font-weight:700;font-size:80px;line-height:.98;letter-spacing:-.03em">The devices your hospital relies on<span style="color:#E4122B">.</span></h1>
+      <p style="margin:28px 0 0;max-width:32em;font-size:18px;line-height:1.6;color:#4a4a4a">M.D. is a medical device distributor serving interventional cardiology programmes across Egypt — sourcing stents, balloons, guidewires, catheters and consumables from trusted international manufacturers and delivering them to your hospital.</p>
+      <div class="m-herobtns" style="display:flex;gap:14px;margin-top:36px">
+        <span onClick="{{ openQuote }}" style="display:inline-flex;align-items:center;height:52px;padding:0 30px;background:#0d0d0d;color:#fff;border-radius:999px;font-weight:600;font-size:15px;cursor:pointer">Request a quote</span>
+        <a href="#products" style="display:inline-flex;align-items:center;height:52px;padding:0 30px;border:1.5px solid #d9d9d9;border-radius:999px;font-weight:600;font-size:15px">View product range</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div style="position:relative;border:1px solid #ececec;border-radius:12px;overflow:hidden;background:#f6f7f8;height:190px">
+        <img src="assets/acrostak-grip-hero.png" alt="Acrostak Grip balloon catheter" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:130%;height:auto;pointer-events:none">
+      </div>
+      <div style="border:1px solid #ececec;border-radius:12px;padding:24px">
+      <div style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#9a9a9a;margin-bottom:18px">WHAT WE SUPPLY</div>
+      <div style="display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid #f0f0f0;font-size:14px"><span>Coronary Balloons</span><span style="font:500 13px 'IBM Plex Mono',monospace;color:#E4122B">NC · SC · HP</span></div>
+      <div style="display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid #f0f0f0;font-size:14px"><span>CTO &amp; Specialty</span></div>
+      <div style="display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid #f0f0f0;font-size:14px"><span>Guidewires</span><span style="font:500 13px 'IBM Plex Mono',monospace;color:#8a8a8a">PTCA</span></div>
+      <div style="display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid #f0f0f0;font-size:14px"><span>Catheters</span><span style="font:500 13px 'IBM Plex Mono',monospace;color:#8a8a8a">guiding · micro</span></div>
+      <div style="display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid #f0f0f0;font-size:14px"><span>Consumables</span></div>
+    </div>
+    </div>
+  </div>
+
+  <!-- trust strip -->
+  <div class="m-trust" style="display:flex;align-items:center;gap:40px;padding:22px 56px;border-top:1px solid #ececec;border-bottom:1px solid #ececec;background:#fafafa">
+    <span style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:#9a9a9a;white-space:nowrap">TRUSTED BY HOSPITALS ACROSS EGYPT</span>
+    <div style="flex:1;overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)">
+      <div style="display:flex;gap:56px;width:max-content;animation:md-marquee 28s linear infinite;opacity:.55;font-weight:700;font-size:17px;letter-spacing:-.01em;white-space:nowrap">
+        <span>Kasr Al Ainy Hospital</span><span>National Heart Institute</span><span>Cairo University Hospitals</span><span>Ain Shams University Hosp.</span><span>Alexandria Main University Hosp.</span><span>Dar Al Fouad</span><span>Assiut University Heart Hosp.</span>
+        <span>Kasr Al Ainy Hospital</span><span>National Heart Institute</span><span>Cairo University Hospitals</span><span>Ain Shams University Hosp.</span><span>Alexandria Main University Hosp.</span><span>Dar Al Fouad</span><span>Assiut University Heart Hosp.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- products -->
+  <div id="products" style="padding:80px 56px 40px;scroll-margin-top:110px">
+    <div class="m-secthead" style="display:flex;justify-content:space-between;align-items:end;margin-bottom:8px">
+      <h2 style="margin:0;font-size:40px;font-weight:700;letter-spacing:-.02em">What we supply</h2>
+      <span style="font:600 12px 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#9a9a9a">INTERVENTIONAL CARDIOLOGY</span>
+    </div>
+    <div>
+      <div class="m-prodrow" style="display:grid;grid-template-columns:80px 1fr 1.4fr auto;gap:24px;align-items:center;padding:28px 0;border-top:1px solid #ececec">
+        <span style="font:600 15px 'IBM Plex Mono',monospace;color:#E4122B">01</span>
+        <span style="font-size:24px;font-weight:600;letter-spacing:-.01em">Coronary Balloons</span>
+        <span style="color:#666;font-size:15px;line-height:1.5">Non-compliant, semi-compliant and high-pressure PTCA balloons for pre- and post-dilatation and stent delivery.</span>
+        <span style="font:600 13px 'IBM Plex Mono',monospace;color:#0d0d0d">→</span>
+      </div>
+      <div class="m-prodrow" style="display:grid;grid-template-columns:80px 1fr 1.4fr auto;gap:24px;align-items:center;padding:28px 0;border-top:1px solid #ececec">
+        <span style="font:600 15px 'IBM Plex Mono',monospace;color:#E4122B">02</span>
+        <span style="font-size:24px;font-weight:600;letter-spacing:-.01em">CTO &amp; Specialty Balloons</span>
+        <span style="color:#666;font-size:15px;line-height:1.5">CTO crossing, scoring and IVL / drug-coated balloons for calcified and complex lesions.</span>
+        <span style="font:600 13px 'IBM Plex Mono',monospace;color:#0d0d0d">→</span>
+      </div>
+      <div class="m-prodrow" style="display:grid;grid-template-columns:80px 1fr 1.4fr auto;gap:24px;align-items:center;padding:28px 0;border-top:1px solid #ececec">
+        <span style="font:600 15px 'IBM Plex Mono',monospace;color:#E4122B">03</span>
+        <span style="font-size:24px;font-weight:600;letter-spacing:-.01em">Guidewires</span>
+        <span style="color:#666;font-size:15px;line-height:1.5">PTCA guidewires with platinum-coil radiopacity and core-to-tip support for reliable crossing and control.</span>
+        <span style="font:600 13px 'IBM Plex Mono',monospace;color:#0d0d0d">→</span>
+      </div>
+      <div class="m-prodrow" style="display:grid;grid-template-columns:80px 1fr 1.4fr auto;gap:24px;align-items:center;padding:28px 0;border-top:1px solid #ececec">
+        <span style="font:600 15px 'IBM Plex Mono',monospace;color:#E4122B">04</span>
+        <span style="font-size:24px;font-weight:600;letter-spacing:-.01em">Catheters</span>
+        <span style="color:#666;font-size:15px;line-height:1.5">Guiding and diagnostic catheters plus microcatheters for access, support and guidewire exchange.</span>
+        <span style="font:600 13px 'IBM Plex Mono',monospace;color:#0d0d0d">→</span>
+      </div>
+      <div class="m-prodrow" style="display:grid;grid-template-columns:80px 1fr 1.4fr auto;gap:24px;align-items:center;padding:28px 0;border-top:1px solid #ececec;border-bottom:1px solid #ececec">
+        <span style="font:600 15px 'IBM Plex Mono',monospace;color:#E4122B">05</span>
+        <span style="font-size:24px;font-weight:600;letter-spacing:-.01em">Consumables &amp; Accessories</span>
+        <span style="color:#666;font-size:15px;line-height:1.5">Introducer sheaths, inflation devices, connectors and single-use procedural consumables.</span>
+        <span style="font:600 13px 'IBM Plex Mono',monospace;color:#0d0d0d">→</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- partners -->
+  <div id="partners" style="padding:80px 56px;border-top:1px solid #ececec;background:#0d0d0d;color:#fff;scroll-margin-top:110px">
+    <div class="m-secthead" style="display:flex;justify-content:space-between;align-items:end;margin-bottom:44px">
+      <div>
+        <div style="font:600 12px 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#E4122B;margin-bottom:16px">SUPPLY PARTNERS</div>
+        <h2 style="margin:0;font-size:40px;font-weight:700;letter-spacing:-.02em">The companies we represent</h2>
+        <p style="margin:16px 0 0;max-width:44em;color:#bdbdbd;font-size:16px;line-height:1.6">We bring device lines from leading international medical device companies to Egyptian hospitals — matched to each programme's clinical needs and budget.</p>
+      </div>
+    </div>
+    <div class="m-partners" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:stretch">
+
+      <div style="background:#151517;border:1px solid #26262a;border-radius:14px;padding:30px;display:flex;flex-direction:column">
+        <div style="height:76px;border-radius:10px;background:#ffffff;overflow:hidden;margin-bottom:24px;padding:12px 18px">
+          <img src="assets/logo-acrostak.jpg" alt="Acrostak logo" style="display:block;width:100%;height:100%;object-fit:contain;border-radius:6px">
+        </div>
+        <div style="display:flex;gap:8px;margin-bottom:16px">
+          <span style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.06em;color:#0d0d0d;background:#E4122B;border-radius:999px;padding:5px 11px">SWISS MADE</span>
+          <span style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.06em;color:#bdbdbd;border:1px solid #33333a;border-radius:999px;padding:5px 11px">SWITZERLAND</span>
+        </div>
+        <p style="margin:0 0 20px;color:#b4b4bc;font-size:14px;line-height:1.6;flex:1">Premium PTCA, CTO and specialty scoring balloons and microcatheters — engineered in Switzerland for the most challenging lesions.</p>
+        <div style="font:500 12px 'IBM Plex Mono',monospace;color:#8a8a92;line-height:1.9;border-top:1px solid #26262a;padding-top:16px">Across NC · Across HP<br>Across CTO / ST · Grip · M-Cath Flexy</div>
+      </div>
+
+      <div style="background:#151517;border:1px solid #26262a;border-radius:14px;padding:30px;display:flex;flex-direction:column">
+        <div style="height:76px;border-radius:10px;background:#ffffff;overflow:hidden;margin-bottom:24px;padding:12px 18px">
+          <img src="assets/logo-hosmed.jpg" alt="Hosmed logo" style="display:block;width:100%;height:100%;object-fit:contain;border-radius:6px">
+        </div>
+        <div style="display:flex;gap:8px;margin-bottom:16px">
+          <span style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.06em;color:#0d0d0d;background:#E4122B;border-radius:999px;padding:5px 11px">CURRENT PARTNER</span>
+        </div>
+        <p style="margin:0 0 20px;color:#b4b4bc;font-size:14px;line-height:1.6;flex:1">Interventional cardiology devices and consumables represented by M.D. — extending the range available to Egyptian cath labs.</p>
+        <div style="font:500 12px 'IBM Plex Mono',monospace;color:#8a8a92;line-height:1.9;border-top:1px solid #26262a;padding-top:16px">Interventional cardiology<br>Devices · Consumables</div>
+      </div>
+
+      <div style="background:#151517;border:1px solid #26262a;border-radius:14px;padding:30px;display:flex;flex-direction:column">
+        <div style="height:76px;border-radius:10px;background:#ffffff;overflow:hidden;margin-bottom:24px;padding:12px 18px">
+          <img src="assets/logo-medtronic.jpg" alt="Medtronic logo" style="display:block;width:100%;height:100%;object-fit:contain;border-radius:6px">
+        </div>
+        <div style="display:flex;gap:8px;margin-bottom:16px">
+          <span style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.06em;color:#e6e6e6;border:1px solid #4a4a52;border-radius:999px;padding:5px 11px">FORMER PARTNER</span>
+          <span style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.06em;color:#bdbdbd;border:1px solid #33333a;border-radius:999px;padding:5px 11px">15+ YEARS</span>
+        </div>
+        <p style="margin:0 0 20px;color:#b4b4bc;font-size:14px;line-height:1.6;flex:1">A global leader in medical technology partnered with M.D. for over 15 years across interventional cardiology and vascular. No longer part of our current catalogue.</p>
+        <div style="font:500 12px 'IBM Plex Mono',monospace;color:#8a8a92;line-height:1.9;border-top:1px solid #26262a;padding-top:16px">Coronary · Structural heart<br>Peripheral · Endovascular</div>
+      </div>
+
+      <div style="border:1px dashed #33333a;border-radius:14px;padding:30px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:14px">
+        <div style="width:44px;height:44px;border-radius:10px;border:1px solid #33333a;display:flex;align-items:center;justify-content:center;color:#E4122B;font-size:24px;font-weight:400">+</div>
+        <div style="font-weight:700;font-size:18px">A growing network</div>
+        <p style="margin:0;color:#8a8a92;font-size:14px;line-height:1.6">We continuously add companies across interventional cardiology and adjacent fields to widen the range available to our hospitals.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- featured product -->
+  <div class="m-feat" style="position:relative;overflow:hidden;background:#fff;border-top:1px solid #ececec;display:grid;grid-template-columns:1.05fr 1fr;align-items:center">
+    <div class="m-featpad" style="position:relative;z-index:2;padding:64px 56px;max-width:600px">
+      <div style="font:600 12px 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#E4122B;margin-bottom:18px">FEATURED DEVICE · ACROSTAK</div>
+      <h2 style="margin:0;font-size:44px;font-weight:700;letter-spacing:-.02em;line-height:1.03">The Grip balloon, in the lab when it matters most.</h2>
+      <p style="margin:18px 0 0;max-width:30em;color:#4a4a4a;font-size:16px;line-height:1.6">Puncture-resistant, polymer-only construction for slippery and heavily calcified lesions — engineered in Switzerland by our partner Acrostak, stocked here in Egypt.</p>
+      <a href="https://www.acrostak.com" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;height:52px;padding:0 30px;margin-top:32px;background:#0d0d0d;color:#fff;border-radius:999px;font-weight:600;font-size:15px">See the Acrostak range →</a>
+    </div>
+    <div class="m-featimg" style="position:relative;align-self:stretch;min-height:400px;overflow:hidden">
+      <img src="assets/acrostak-grip-overview.png" alt="Acrostak Grip balloon catheter" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(6deg);height:118%;width:auto;opacity:.6;pointer-events:none">
+    </div>
+  </div>
+
+  <!-- capabilities -->
+  <div class="m-why" style="padding:56px 56px;background:#fafafa;border-top:1px solid #ececec">
+    <h2 style="margin:0 0 40px;font-size:40px;font-weight:700;letter-spacing:-.02em">Why hospitals choose M.D.</h2>
+    <div class="m-whygrid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px">
+      <div style="border-top:2px solid #E4122B;padding-top:18px"><div style="font-weight:700;font-size:18px;margin-bottom:8px">Certified &amp; compliant</div><div style="color:#666;font-size:14px;line-height:1.55">Swiss-made and CE-certified devices from established international manufacturers.</div></div>
+      <div style="border-top:2px solid #E4122B;padding-top:18px"><div style="font-weight:700;font-size:18px;margin-bottom:8px">Reliable supply</div><div style="color:#666;font-size:14px;line-height:1.55">Locally stocked inventory so critical sizes are on the shelf when you need them.</div></div>
+      <div style="border-top:2px solid #E4122B;padding-top:18px"><div style="font-weight:700;font-size:18px;margin-bottom:8px">Clinical support</div><div style="color:#666;font-size:14px;line-height:1.55">Product specialists available in-lab to support case planning and sizing.</div></div>
+      <div style="border-top:2px solid #E4122B;padding-top:18px"><div style="font-weight:700;font-size:18px;margin-bottom:8px">Fast delivery</div><div style="color:#666;font-size:14px;line-height:1.55">Rapid hospital fulfilment across Egypt, including urgent same-week orders.</div></div>
+    </div>
+  </div>
+
+  <!-- coverage -->
+  <div id="coverage" style="padding:80px 56px;display:grid;grid-template-columns:1fr 1fr;gap:40px;scroll-margin-top:110px">
+    <div>
+      <div style="font:600 12px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:#E4122B;margin-bottom:16px">COVERAGE</div>
+      <h2 style="margin:0;font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.05">Serving hospitals across Egypt.</h2>
+      <p style="margin:20px 0 0;max-width:26em;color:#4a4a4a;font-size:16px;line-height:1.6">A single supply partner for interventional cardiology programmes nationwide.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;justify-content:center">
+      <div style="display:flex;align-items:center;justify-content:space-between;border:1px solid #ececec;border-radius:12px;padding:22px 26px"><span style="font-weight:700;font-size:20px">Greater Cairo</span><span style="font:500 13px 'IBM Plex Mono',monospace;color:#8a8a8a">Cairo · Giza</span></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;border:1px solid #ececec;border-radius:12px;padding:22px 26px"><span style="font-weight:700;font-size:20px">Alexandria &amp; Delta</span><span style="font:500 13px 'IBM Plex Mono',monospace;color:#8a8a8a">Alexandria · Mansoura · Tanta</span></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;border:1px solid #ececec;border-radius:12px;padding:22px 26px"><span style="font-weight:700;font-size:20px">Upper Egypt</span><span style="font:500 13px 'IBM Plex Mono',monospace;color:#8a8a8a">Assiut · Sohag · Luxor</span></div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div id="about" style="margin:0 56px 56px;background:#0d0d0d;color:#fff;border-radius:16px;padding:64px 56px;display:flex;align-items:center;justify-content:space-between;gap:40px;scroll-margin-top:110px">
+    <div>
+      <img src="assets/md-logo-white.png" alt="M.D." style="height:44px;width:auto;display:block;margin-bottom:26px">
+      <h2 style="margin:0;font-size:44px;font-weight:700;letter-spacing:-.02em;line-height:1.02">Equip your hospital<span style="color:#E4122B">.</span></h2>
+      <p style="margin:16px 0 0;color:#bdbdbd;font-size:16px;max-width:32em">Share your department's device list and case volumes — we'll come back to your procurement team with availability and pricing.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:28px;margin-top:28px;font:500 13px 'IBM Plex Mono',monospace;color:#bdbdbd;letter-spacing:.03em">
+        <span>TEL <span style="color:#fff">+2 02 2275 6545</span></span>
+        <span>FAX <span style="color:#fff">+2 02 2287 9322</span></span>
+        <span>EMAIL <a href="mailto:mdc@mdcegy.com" style="color:#fff">mdc@mdcegy.com</a></span>
+      </div>
+    </div>
+    <span onClick="{{ openQuote }}" style="display:inline-flex;align-items:center;height:56px;padding:0 34px;background:#E4122B;color:#fff;border-radius:999px;font-weight:600;font-size:16px;white-space:nowrap;cursor:pointer">Request a quote →</span>
+  </div>
+
+  <!-- footer -->
+  <div class="m-footer" style="display:flex;justify-content:space-between;align-items:center;padding:28px 56px;border-top:1px solid #ececec;font:500 12px 'IBM Plex Mono',monospace;color:#9a9a9a;letter-spacing:.04em">
+    <span>M.D. — FOR MEDICAL SUPPLIES</span>
+    <span>AL SARAG TOWERS, MAKRAM EBID ST., NASR CITY, CAIRO · TEL +2 02 2275 6545</span>
+    <span>© 2026</span>
+  </div>
+
+  <!-- quote modal -->
+  <sc-if value="{{ quoteOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeQuote }}" style="position:fixed;inset:0;background:rgba(13,13,13,.55);z-index:100;display:flex;align-items:center;justify-content:center;padding:24px">
+      <div onClick="{{ stopProp }}" style="background:#fff;border-radius:16px;padding:40px;width:520px;max-width:100%;max-height:90vh;overflow:auto;box-shadow:0 24px 80px rgba(0,0,0,.35)">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:6px">
+          <h3 style="margin:0;font-size:28px;font-weight:700;letter-spacing:-.02em">Request a quote</h3>
+          <span onClick="{{ closeQuote }}" style="cursor:pointer;font-size:22px;line-height:1;color:#9a9a9a;padding:4px">✕</span>
+        </div>
+        <p style="margin:0 0 24px;color:#6a6a6a;font-size:14px;line-height:1.5">Tell us what your department needs — we'll reply with availability and pricing. Or call us directly: <b style="white-space:nowrap">+2 02 2275 6545</b></p>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div><div style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#9a9a9a;margin-bottom:6px">HOSPITAL / INSTITUTION</div><input value="{{ qHospital }}" onChange="{{ setHospital }}" placeholder="e.g. Kasr Al Ainy Hospital" style="width:100%;height:46px;border:1px solid #d9d9d9;border-radius:10px;padding:0 14px;font:400 15px 'Archivo',sans-serif;outline:none"></div>
+          <div><div style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#9a9a9a;margin-bottom:6px">CONTACT NAME</div><input value="{{ qName }}" onChange="{{ setName }}" placeholder="Your name" style="width:100%;height:46px;border:1px solid #d9d9d9;border-radius:10px;padding:0 14px;font:400 15px 'Archivo',sans-serif;outline:none"></div>
+          <div><div style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#9a9a9a;margin-bottom:6px">PHONE OR EMAIL</div><input value="{{ qContact }}" onChange="{{ setContact }}" placeholder="How should we reach you?" style="width:100%;height:46px;border:1px solid #d9d9d9;border-radius:10px;padding:0 14px;font:400 15px 'Archivo',sans-serif;outline:none"></div>
+          <div><div style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#9a9a9a;margin-bottom:6px">DEVICES &amp; QUANTITIES</div><textarea value="{{ qDevices }}" onChange="{{ setDevices }}" placeholder="e.g. Grip 2.0×10mm ×20, Across NC ×50…" style="width:100%;min-height:110px;border:1px solid #d9d9d9;border-radius:10px;padding:12px 14px;font:400 15px 'Archivo',sans-serif;outline:none;resize:vertical"></textarea></div>
+          <span onClick="{{ submitQuote }}" style="display:inline-flex;align-items:center;justify-content:center;height:52px;background:#E4122B;color:#fff;border-radius:999px;font-weight:600;font-size:15px;cursor:pointer">Send request →</span>
+          <div style="text-align:center;font:500 12px 'IBM Plex Mono',monospace;color:#9a9a9a">Opens your email client, addressed to mdc@mdcegy.com</div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { quoteOpen: false, qHospital: '', qName: '', qContact: '', qDevices: '' };
+  renderVals() {
+    return {
+      quoteOpen: this.state.quoteOpen,
+      qHospital: this.state.qHospital,
+      qName: this.state.qName,
+      qContact: this.state.qContact,
+      qDevices: this.state.qDevices,
+      openQuote: () => this.setState({ quoteOpen: true }),
+      closeQuote: () => this.setState({ quoteOpen: false }),
+      stopProp: (e) => e.stopPropagation(),
+      setHospital: (e) => this.setState({ qHospital: e.target.value }),
+      setName: (e) => this.setState({ qName: e.target.value }),
+      setContact: (e) => this.setState({ qContact: e.target.value }),
+      setDevices: (e) => this.setState({ qDevices: e.target.value }),
+      submitQuote: () => {
+        const s = this.state;
+        const subject = encodeURIComponent('Quote request — ' + (s.qHospital || 'Hospital'));
+        const body = encodeURIComponent(
+          'Hospital / Institution: ' + s.qHospital + '\n' +
+          'Contact name: ' + s.qName + '\n' +
+          'Phone / Email: ' + s.qContact + '\n\n' +
+          'Devices & quantities:\n' + s.qDevices
+        );
+        window.open('mailto:mdc@mdcegy.com?subject=' + subject + '&body=' + body, '_self');
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
